@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex: 1;
+    padding-left: 15px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkturquoise;
+    color: #FFFFFF;
+    height: 70px;
+}
+
+h1 {
+    font-size: 22pt;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile span {
+    margin: 15px;
+}
+
+.profile span:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+}
