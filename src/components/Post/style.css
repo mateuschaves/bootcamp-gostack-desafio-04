@@ -1,0 +1,49 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    background-color: #FFFFFFFF;
+    width: 700px;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+}
+
+.user h4 {
+    font-size: 14pt;
+    color: #4A4A4A;
+}
+
+.user span {
+    font-size: 11pt;
+    color: #9A9A9A;
+}
+
+.userImage {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border-radius: 90px;
+}
+
+.text {
+    color: #3E3E3E;
+    margin-top: 20px;
+    font-size: 14pt;
+}
+
+.separator {
+    height: 1px;
+    width: 660px;
+    background-color: #EEEEEE;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

@@ -1,4 +1,4 @@
-.container {
+.header {
     display: flex;
     flex: 1;
     padding-left: 15px;
@@ -7,6 +7,7 @@
     background-color: #4A90E2;
     color: #FFFFFF;
     height: 70px;
+    
 }
 
 image {
