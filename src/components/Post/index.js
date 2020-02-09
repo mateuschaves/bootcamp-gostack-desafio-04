@@ -2,22 +2,24 @@ import React from 'react';
 
 import './style.css';
 
-import Profile from '../../assets/images/i.jpg'
+import Comment from '../Comment';
 
-export default function Post() {
+export default function Post({ content: { author, date, content, comments } }) {
     return (
         <div className="post">
             <div className="user">
-                <img src={Profile} className="userImage" />
+                <img src={author.avatar} className="userImage" alt="Imagem de perfil do usuário" />
                 <div className="userInfo">
-                    <h4>Mateus Henrique</h4>
-                    <span>04 jun 2019</span>
+                    <h4>{author.name}</h4>
+                    <span>{date}</span>
                 </div>
             </div>
-            <p className="text">Pessoal, alguém sabe se a Rocketseat está contratando?</p>
+            <p className="text">{content}</p>
 
             <div className="separator">
             </div>
+
+            {comments.map(comment => <Comment key={comment.id} content={comment} />)}
         </div>
     );
 }

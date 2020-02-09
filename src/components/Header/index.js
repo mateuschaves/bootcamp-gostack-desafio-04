@@ -9,7 +9,7 @@ import { MdPerson } from "react-icons/md";
 export default function Header() {
     return (
         <div className="header">
-            <img src={facebookLogo} />
+            <img src={facebookLogo} alt="Facebook logo" />
 
             <div className="profile">
                 <span>Meu perfil</span>

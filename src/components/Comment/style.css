@@ -1,0 +1,29 @@
+.comment {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.textBox {
+    background-color: #EEEEEE;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.userCommentImage {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 90px;
+    margin: 5px;
+}
+
+.textCommet {
+    color: #3E3E3E;
+    margin-top: 20px;
+    font-size: 14pt;
+}
+
+.userName {
+    font-weight: 600;
+}
