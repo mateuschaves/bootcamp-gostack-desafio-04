@@ -4,22 +4,29 @@
     padding-left: 15px;
     justify-content: space-between;
     align-items: center;
-    background-color: darkturquoise;
+    background-color: #4A90E2;
     color: #FFFFFF;
     height: 70px;
 }
 
-h1 {
-    font-size: 22pt;
+image {
+    width: 121px;
+    height: 24px;
 }
 
 .profile {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .profile span {
-    margin: 15px;
+    margin: 5px;
+    font-size: 15pt;
+}
+
+.profile .personIcon {
+    margin: 5px;
 }
 
 .profile span:hover {

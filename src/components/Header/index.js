@@ -2,14 +2,18 @@ import React from 'react';
 
 import './style.css';
 
+import facebookLogo from '../../assets/images/facebook-1.png';
+
+import { MdPerson } from "react-icons/md";
+
 export default function Header() {
     return (
         <div className="container">
-            <h1>facebook</h1>
+            <img src={facebookLogo} />
 
             <div className="profile">
                 <span>Meu perfil</span>
-                <small>Icone</small>
+                <MdPerson className="personIcon" size={30} />
             </div>
         </div>
     );
