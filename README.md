@@ -1,68 +1,113 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    <img alt="GoStack" src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/bootcamp-header.png" width="200px" />
+</h1>
 
-## Available Scripts
+<h3 align="center">
+  Desafio 4: Introdução ao React
+</h3>
 
-In the project directory, you can run:
+<p align="center">“Sucesso não é o resultado de um jogo, mas o destino de uma jornada”!</blockquote>
 
-### `yarn start`
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/rocketseat/bootcamp-gostack-desafio-04?color=%2304D361">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <a href="https://rocketseat.com.br">
+    <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%2304D361">
+  </a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 
-### `yarn test`
+  <a href="https://github.com/Rocketseat/bootcamp-gostack-desafio-04/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/rocketseat/bootcamp-gostack-desafio-04?style=social">
+  </a>
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
+</p>
 
-### `yarn build`
+## :rocket: Sobre o desafio
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Crie uma aplicação do zero utilizando **Webpack, Babel, Webpack Dev Server e ReactJS**.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Nessa aplicação você irá desenvolver uma **interface** semelhante com a do **Facebook** utilizando React.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+As informações contidas na interface são **estáticas** e não precisam refletir nenhuma API REST ou back-end.
 
-### `yarn eject`
+### Tela da aplicação
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Facebook](.github/facebook.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+O layout não precisa ficar exatamente igual, você pode utilizar sua criatividade para modificar da maneira que preferir.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+O mais importante é que todos elementos apareçam em tela.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+O layout da aplicação está [nesse link](.github/layout.sketch) que pode ser aberto por essa ferramenta gratuita e online: https://www.figma.com/
 
-## Learn More
+### Componentes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Na imagem abaixo destaquei cada componente que você criará e abaixo da imagem está a descrição e responsabilidades de cada um:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Componentes](.github/components.png)
 
-### Code Splitting
+**Header (Amarelo):** Responsável por exibir a logo e o link para acessar o perfil;
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**PostList (Verde):** Responsável por armazenar os dados da listagem de post, esses dados devem ficar dentro do `state` do componente e não em uma variável comum, por exemplo:
 
-### Analyzing the Bundle Size
+```js
+class PostList extends Component {
+  state = {
+    posts: [
+      {
+        id: 1,
+        author: {
+          name: "Julio Alcantara",
+          avatar: "http://url-da-imagem.com/imagem.jpg"
+        },
+        date: "04 Jun 2019",
+        content: "Pessoal, alguém sabe se a Rocketseat está contratando?",
+        comments: [
+          {
+            id: 1,
+            author: {
+              name: "Diego Fernandes",
+              avatar: "http://url-da-imagem.com/imagem.jpg"
+            },
+            content: "Conteúdo do comentário"
+          }
+        ]
+      },
+      {
+        id: 2
+        // Restante dos dados de um novo post
+      }
+    ]
+  };
+}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+**Post (Vermelho):** Responsável por exibir os dados do post, esses dados devem vir através de uma propriedade recebida do componente PostList, ou seja, lá no PostList você terá algo assim:
 
-### Making a Progressive Web App
+```js
+posts.map(post => <Post key={post.id} data={post} />);
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+**Comment (Azul):** Responsável por exibir um comentário. Os dados do comentário virão por uma propriedade do componente. Dentro do componente Post você terá um novo `.map` para listar os comentários do post:
 
-### Advanced Configuration
+```js
+data.comments.map(comment => <Comment key={comment.id} data={comment} />);
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## 📅 Entrega
 
-### Deployment
+Esse desafio **não precisa ser entregue** e não receberá correção, mas você pode ver o resultado do [código do desafio aqui](https://github.com/Rocketseat/bootcamp-gostack-desafio-04). Após concluir o desafio, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## :memo: Licença
 
-### `yarn build` fails to minify
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
+
+Feito com ♥ by Rocketseat :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
